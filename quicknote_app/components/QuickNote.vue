@@ -169,8 +169,8 @@ function formatDate(date: Date): string {
           type="text"
           placeholder="Search notes..."
           style="width: 100%; padding: 12px 16px; border: 2px solid #f5f5f5; border-radius: 8px; font-size: 16px; outline: none; transition: border-color 0.2s;"
-          @focus="$event.target.style.borderColor='#4a90e2'"
-          @blur="$event.target.style.borderColor='#f5f5f5'"
+          @focus="e => e.target.style.borderColor='#4a90e2'"
+          @blur="e => e.target.style.borderColor='#f5f5f5'"
         />
         <div style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #999;">
           🔍
@@ -182,8 +182,8 @@ function formatDate(date: Date): string {
         <button
           @click="showAddNoteForm"
           style="background-color: #4a90e2; color: white; border: none; border-radius: 8px; padding: 12px 24px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.2s; box-shadow: 0 2px 4px rgba(74, 144, 226, 0.2);"
-          @mouseover="$event.target.style.backgroundColor='#357abd'"
-          @mouseout="$event.target.style.backgroundColor='#4a90e2'"
+          @mouseover="e => e.target.style.backgroundColor='#357abd'"
+          @mouseout="e => e.target.style.backgroundColor='#4a90e2'"
         >
           ➕ Add Note
         </button>
@@ -197,11 +197,11 @@ function formatDate(date: Date): string {
         :key="note.id"
         class="note-card"
         style="background-color: #f5f5f5; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-        @mouseover="$event.target.style.transform='translateY(-2px)'; $event.target.style.boxShadow='0 4px 16px rgba(0,0,0,0.15)'"
-        @mouseout="$event.target.style.transform='translateY(0)'; $event.target.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+        @mouseover="e => { e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.boxShadow='0 4px 16px rgba(0,0,0,0.15)' }"
+        @mouseout="e => { e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)' }"
         @click="editNote(note)"
       >
-        <div style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
           <h3 style="color: #333; font-size: 1.25rem; font-weight: 600; margin: 0; flex: 1; line-height: 1.3;">
             {{ note.title }}
           </h3>
