@@ -42,7 +42,7 @@ onMounted(() => {
 function loadNotes() {
   const savedNotes = localStorage.getItem("quicknotes");
   if (savedNotes) {
-    notes.value = JSON.parse(savedNotes).map((note: any) => ({
+    notes.value = JSON.parse(savedNotes).map((note: Note) => ({
       ...note,
       createdAt: new Date(note.createdAt),
       updatedAt: new Date(note.updatedAt),
@@ -91,7 +91,7 @@ function saveNote() {
 
   if (editingNote.value) {
     // Update existing note
-    const index = notes.value.findIndex((n) => n.id === editingNote.value!.id);
+    const index = notes.value.findIndex((n) => n.id === editingNote.value?.id);
     if (index !== -1) {
       notes.value[index] = {
         ...notes.value[index],
