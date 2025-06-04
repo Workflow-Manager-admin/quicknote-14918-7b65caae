@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /home/kavia/workspace/code-generation/quicknote-14918-7b65caae/quicknote_app
-npx run lint
+npm run lint
 ESLINT_EXIT_CODE=$?
 npm run build
 BUILD_EXIT_CODE=$?
