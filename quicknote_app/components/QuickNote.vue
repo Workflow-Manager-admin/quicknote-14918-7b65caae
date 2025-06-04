@@ -208,8 +208,8 @@ function formatDate(date: Date): string {
           <button
             @click.stop="deleteNote(note.id)"
             style="background: none; border: none; color: #ff4757; cursor: pointer; padding: 4px; border-radius: 4px; transition: background-color 0.2s;"
-            @mouseover="$event.target.style.backgroundColor='rgba(255, 71, 87, 0.1)'"
-            @mouseout="$event.target.style.backgroundColor='transparent'"
+            @mouseover="e => e.target.style.backgroundColor='rgba(255, 71, 87, 0.1)'"
+            @mouseout="e => e.target.style.backgroundColor='transparent'"
             title="Delete note"
           >
             🗑️
@@ -266,8 +266,8 @@ function formatDate(date: Date): string {
             type="text"
             placeholder="Enter note title..."
             style="width: 100%; padding: 12px; border: 2px solid #f5f5f5; border-radius: 8px; font-size: 16px; outline: none; transition: border-color 0.2s;"
-            @focus="$event.target.style.borderColor='#4a90e2'"
-            @blur="$event.target.style.borderColor='#f5f5f5'"
+            @focus="e => e.target.style.borderColor='#4a90e2'"
+            @blur="e => e.target.style.borderColor='#f5f5f5'"
           />
         </div>
         
@@ -280,8 +280,8 @@ function formatDate(date: Date): string {
             placeholder="Write your note here..."
             rows="8"
             style="width: 100%; padding: 12px; border: 2px solid #f5f5f5; border-radius: 8px; font-size: 16px; outline: none; transition: border-color 0.2s; resize: vertical; font-family: inherit;"
-            @focus="$event.target.style.borderColor='#4a90e2'"
-            @blur="$event.target.style.borderColor='#f5f5f5'"
+            @focus="e => e.target.style.borderColor='#4a90e2'"
+            @blur="e => e.target.style.borderColor='#f5f5f5'"
           ></textarea>
         </div>
         
@@ -289,8 +289,8 @@ function formatDate(date: Date): string {
           <button
             @click="hideForm"
             style="background-color: #f5f5f5; color: #666; border: none; border-radius: 8px; padding: 10px 20px; font-size: 14px; cursor: pointer; transition: background-color 0.2s;"
-            @mouseover="$event.target.style.backgroundColor='#e0e0e0'"
-            @mouseout="$event.target.style.backgroundColor='#f5f5f5'"
+            @mouseover="e => e.target.style.backgroundColor='#e0e0e0'"
+            @mouseout="e => e.target.style.backgroundColor='#f5f5f5'"
           >
             Cancel
           </button>
