@@ -299,8 +299,8 @@ function formatDate(date: Date): string {
             :disabled="!newNoteTitle.trim() || !newNoteContent.trim()"
             style="background-color: #4a90e2; color: white; border: none; border-radius: 8px; padding: 10px 20px; font-size: 14px; cursor: pointer; transition: background-color 0.2s;"
             :style="(!newNoteTitle.trim() || !newNoteContent.trim()) ? 'opacity: 0.5; cursor: not-allowed;' : ''"
-            @mouseover="if(newNoteTitle.trim() && newNoteContent.trim()) $event.target.style.backgroundColor='#357abd'"
-            @mouseout="if(newNoteTitle.trim() && newNoteContent.trim()) $event.target.style.backgroundColor='#4a90e2'"
+            @mouseover="e => { if(newNoteTitle.trim() && newNoteContent.trim()) e.target.style.backgroundColor='#357abd' }"
+            @mouseout="e => { if(newNoteTitle.trim() && newNoteContent.trim()) e.target.style.backgroundColor='#4a90e2' }"
           >
             {{ editingNote ? 'Update' : 'Save' }}
           </button>
